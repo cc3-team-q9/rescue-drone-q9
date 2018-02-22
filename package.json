@@ -1,0 +1,28 @@
+{
+    "name": "rescue-drone-q9",
+    "version": "1.0.0",
+    "description": "This repositry is made by students of Code Chrysalis",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.16.2",
+        "knex": "^0.14.4",
+        "pg": "^7.4.1",
+        "react": "^16.2.0",
+        "react-google-maps": "^9.4.5",
+        "react-redux": "^5.0.7",
+        "redux": "^3.7.2",
+        "webpack": "^3.11.0"
+    },
+    "devDependencies": {
+        "eslint": "^4.9.0",
+        "eslint-config-airbnb": "^16.1.0",
+        "eslint-plugin-import": "^2.7.0",
+        "eslint-plugin-jsx-a11y": "^6.0.2",
+        "eslint-plugin-react": "^7.4.0"
+    }
+}
