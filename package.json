@@ -4,7 +4,9 @@
     "description": "This repository is made by students of Code Chrysalis",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "migrate": "knex migrate:latest --knexfile ./server/services/db/knexfile.js",
+        "rollback": "knex migrate:rollback --knexfile ./server/services/db/knexfile.js"
     },
     "author": "",
     "license": "MIT",
