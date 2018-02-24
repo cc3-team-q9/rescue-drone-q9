@@ -5,14 +5,17 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "migrate": "knex migrate:latest --knexfile ./server/services/db/knexfile.js",
-        "rollback": "knex migrate:rollback --knexfile ./server/services/db/knexfile.js"
+        "migrate": "knex migrate:latest --knexfile ./middlewares/db/knexfile.js",
+        "rollback": "knex migrate:rollback --knexfile ./middlewares/db/knexfile.js",
+        "start": "node index.js"
     },
     "author": "",
     "license": "MIT",
     "dependencies": {
+        "body-parser": "^1.18.2",
         "express": "^4.16.2",
         "knex": "^0.14.4",
+        "morgan": "^1.9.0",
         "pg": "^7.4.1",
         "react": "^16.2.0",
         "react-google-maps": "^9.4.5",
