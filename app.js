@@ -3,22 +3,21 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+// router with db setup
+const config = require('./config');
+const middlewares = require('./middlewares/index')(config);
+const apiRouter = require('./routes/api/index')(middlewares);
 
 const app = express();
 
 // middleware setup
 app.use(logger('dev'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/json' }));
 // you cannot send nested objects to a server.
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// router with db setup
-const config = require('./config');
-const middlewares = require('./middlewares/index')(config);
-const messages = require('./routes/messages')(middlewares);
-
-app.use('/api', messages);
+app.use('/api', apiRouter);
+app.use(express.static(path.join(__dirname, './public')));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));

@@ -1,5 +1,6 @@
 const createMessage = require('./createMessage');
 const deleteMessage = require('./deleteMessage');
+const getMessage = require('./getMessage');
 const listMessage = require('./listMessage');
 const updateMessage = require('./updateMessage');
 
@@ -23,6 +24,7 @@ class Message {
 module.exports = knex => ({
   createMessage: createMessage(knex, Message),
   deleteMessage: deleteMessage(knex, Message),
+  getMessage: getMessage(knex, Message),
   listMessage: listMessage(knex, Message),
   updateMessage: updateMessage(knex, Message),
 });
