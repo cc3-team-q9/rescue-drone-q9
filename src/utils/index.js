@@ -8,8 +8,8 @@ function getPositionSuccess(pos) {
   console.log(`Longitude: ${crd.longitude}`);
 
   const locationData = {
-    lng: +crd.latitude,
-    lat: +crd.longitude,
+    lng: +crd.longitude,
+    lat: +crd.latitude,
   };
 
   return locationData;

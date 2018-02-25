@@ -8,9 +8,31 @@ class HelpMessage extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  get currentView() {
+    if (this.props.userLocation.position.lat && this.props.userLocation.position.lat) {
+      return (
+        <div>
+          <div style={{ marginTop: '15px', marginBottom: '15px' }}>
+            Longitude: {this.props.userLocation.position.lng}<br />
+            Latitude: {this.props.userLocation.position.lat}<br />
+          </div>
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <label htmlFor="helpMsg">
+                Your Help Message:
+                <textarea className="textHelp" onChange={this.handleChange} />
+              </label>
+            </div>
+            <input className="button" type="submit" value="Send" />
+          </form>
+        </div>
+      );
+    }
+    return <div />;
+  }
+
   handleChange(event) {
     this.props.writeHelpMessage(event.target.value);
-    // console.log(this.props.helpMsg);
   }
 
   handleSubmit(event) {
@@ -23,46 +45,20 @@ class HelpMessage extends Component {
       this.props.helpMsg,
       this.props.userLocation.position,
     );
-    alert('Your help message was submitted to the Rescue Drone Q9 Team:\n' + this.props.helpMsg);
-  }
-
-  renderEmpty() {
-    return (
-      <div>
-      </div>
-    );
-  }
-
-  renderHelpMessage() {
-    return (
-      <div>
-        <div style={{ marginTop: '15px', marginBottom: '15px' }}>
-          Longitude: {this.props.userLocation.position.lng}<br />
-          Latitude: {this.props.userLocation.position.lat}<br />
-        </div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label>
-              Your Help Message:
-              <textarea className="textHelp" onChange={this.handleChange} />
-            </label>
-          </div>
-          <input className="button" type="submit" value="Send" />
-        </form>
-      </div>
-    );
+    alert(`Your help message was submitted to the Rescue Drone Q9 Team:\n${this.props.helpMsg}`);
   }
 
   render() {
-    if (this.props.userLocation.position.lat && this.props.userLocation.position.lat) {
-      return this.renderHelpMessage();
-    }
-    return this.renderEmpty();
+    return this.currentView;
   }
 }
 
 HelpMessage.propTypes = {
+  helpMsg: PropTypes.string.isRequired,
   registerUserMessage: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
+  userLocation: PropTypes
+    .objectOf(PropTypes.objectOf(PropTypes.number, PropTypes.number)).isRequired,
   writeHelpMessage: PropTypes.func.isRequired,
 };
 
