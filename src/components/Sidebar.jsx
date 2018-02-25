@@ -10,7 +10,6 @@ class Sidebar extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // this.props.registerUserLocation();
     this.props.getUserLocation();
   }
 
@@ -29,7 +28,6 @@ class Sidebar extends Component {
 
 Sidebar.propTypes = {
   getUserLocation: PropTypes.func.isRequired,
-  // registerUserLocation: PropTypes.func.isRequired,
 };
 
 export default Sidebar;

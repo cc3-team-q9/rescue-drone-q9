@@ -4,17 +4,26 @@ import PropTypes from 'prop-types';
 class HelpMessage extends Component {
   constructor(props) {
     super(props);
-    this.input = null;
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.props.writeHelpMessage(event.target.value);
+    // console.log(this.props.helpMsg);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    if (!this.input.value.trim()) {
+    if (!this.props.helpMsg.trim()) {
       return;
     }
-    // this.props.registerUserMessage(input.value);
-    alert('Your help message was submitted to the Rescue Drone Q9 Team:\n' + this.input.value);
+    this.props.registerUserMessage(
+      this.props.username,
+      this.props.helpMsg,
+      this.props.userLocation.position,
+    );
+    alert('Your help message was submitted to the Rescue Drone Q9 Team:\n' + this.props.helpMsg);
   }
 
   renderEmpty() {
@@ -35,9 +44,7 @@ class HelpMessage extends Component {
           <div>
             <label>
               Your Help Message:
-              <textarea className="textHelp" ref={node => {
-                this.input = node;
-              }} />
+              <textarea className="textHelp" onChange={this.handleChange} />
             </label>
           </div>
           <input className="button" type="submit" value="Send" />
@@ -55,7 +62,8 @@ class HelpMessage extends Component {
 }
 
 HelpMessage.propTypes = {
-  // registerUserMessage: PropTypes.func.isRequired,
+  registerUserMessage: PropTypes.func.isRequired,
+  writeHelpMessage: PropTypes.func.isRequired,
 };
 
 export default HelpMessage;

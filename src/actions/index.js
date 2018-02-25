@@ -1,4 +1,4 @@
-import { getUserMarker, setUserLocation, setUserMessage } from '../utils/index';
+import { getUserMarker, setUserMessage } from '../utils/index';
 
 function getMarkerSuccess(userLocation) {
   return {
@@ -22,14 +22,19 @@ function registerFail(error) {
 
 export function getUserLocation() {
   return dispatch => (async () => {
+    console.log('ccccccc');
     const userLocation = await getUserMarker();
     dispatch(getMarkerSuccess(userLocation));
   })();
 }
 
-export function registerUserLocation() {
+export function registerUserMessage(username, message, position) {
+  console.log(username);
+  console.log(message);
+  console.log(position);
   return dispatch => (async () => {
-    const response = await setUserLocation();
+    console.log('aaaaaaaaaaaaaaaa');
+    const response = await setUserMessage(username, message, position);
     if (response === 'success') {
       dispatch(registerSuccess());
       return;
@@ -38,13 +43,9 @@ export function registerUserLocation() {
   });
 }
 
-export function registerUserMessage(userMsg) {
-  return dispatch => (async () => {
-    const response = await setUserMessage(userMsg);
-    if (response === 'success') {
-      dispatch(registerSuccess());
-      return;
-    }
-    dispatch(registerFail(response));
-  });
+export function writeHelpMessage(message) {
+  return {
+    type: 'WRITE_MESSAGE',
+    message,
+  };
 }
