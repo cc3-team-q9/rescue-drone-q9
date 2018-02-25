@@ -34,9 +34,6 @@ export async function getUserMarker() {
 }
 
 export async function setUserMessage(username, message, position) {
-  console.log(username);
-  console.log(message);
-  console.log(position);
   const postData = {
     username,
     message,
