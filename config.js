@@ -7,4 +7,7 @@ module.exports = {
       database: 'rescue_drone',
     },
   },
+  express: {
+    port: process.env.PORT || 3000,
+  },
 };
