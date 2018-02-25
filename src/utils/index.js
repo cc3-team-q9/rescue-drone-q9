@@ -19,25 +19,26 @@ function getPositionError(err) {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
-export async function getUserMarker() {
-  const userLocation = navigator.geolocation
-    .getCurrentPosition(getPositionSuccess, getPositionError);
-
-  if (userLocation) {
-    return userLocation;
-  }
-
-  return {
-    lng: 139.7515992,
-    lat: 35.6580681,
-  };
+export function getUserMarker() {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const currentPosition = getPositionSuccess(pos);
+        resolve(currentPosition);
+      },
+      (err) => {
+        getPositionError(err);
+        reject();
+      },
+    );
+  });
 }
 
-export async function setUserMessage(username, message, position) {
+export async function setUserMessage(_username, _message, position) {
   const postData = {
-    username,
-    message,
-    longitude: position.lat,
+    username: _username,
+    message: _message,
+    longtitude: position.lat,
     latitude: position.lng,
   };
 
