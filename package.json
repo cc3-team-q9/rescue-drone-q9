@@ -5,10 +5,13 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "webpack": "webpack --watch",
+        "hack": "webpack-dev-server",
+        "postinstall": "yarn build && yarn migrate",
+        "build": "webpack"
         "migrate": "knex migrate:latest --knexfile ./middlewares/db/knexfile.js",
         "rollback": "knex migrate:rollback --knexfile ./middlewares/db/knexfile.js",
-        "start": "node index.js",
-        "postinstall": "yarn migrate && yarn start"
     },
     "engines": {
         "node":">=9.3.0",
@@ -17,15 +20,24 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-react": "^6.24.1",
+        "dotenv": "^5.0.0",
+        "dotenv-webpack": "^1.5.4",
         "body-parser": "^1.18.2",
         "express": "^4.16.2",
         "knex": "^0.14.4",
         "morgan": "^1.9.0",
         "pg": "^7.4.1",
+        "prop-types": "^15.6.0",
         "react": "^16.2.0",
+        "react-dom": "^16.2.0",
         "react-google-maps": "^9.4.5",
         "react-redux": "^5.0.7",
         "redux": "^3.7.2",
+        "redux-thunk": "^2.2.0",
         "webpack": "^3.11.0"
     },
     "devDependencies": {
@@ -33,6 +45,7 @@
         "eslint-config-airbnb": "^16.1.0",
         "eslint-plugin-import": "^2.7.0",
         "eslint-plugin-jsx-a11y": "^6.0.2",
-        "eslint-plugin-react": "^7.4.0"
+        "eslint-plugin-react": "^7.4.0",
+        "webpack-dev-server": "^2.11.1"
     }
 }

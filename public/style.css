@@ -1,0 +1,79 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+  background-color: #222;
+}
+
+.button {
+  background-color: #f44336;
+  border: 2px solid #f44336;
+  color: white;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #aa0f0f;
+  border: 2px solid #aa0f0f;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.textHelp {
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+.App {
+  text-align: center;
+}
+
+.map {
+  width: 71%;
+  height: 85%;
+  float: left;
+}
+
+.sidebar {
+  float: right;
+  height: 85%;
+  width: 25%;
+  color: #eee;
+  background-color: rgb(59, 66, 68);
+  text-align: left;
+  padding: 0% 2%;
+}
+
+.App-header {
+  line-height: 5em;
+  color: white;
+}
+
+.App-header h2 {
+  margin: 0;
+}
+
+.textHelp {
+  height: 20em;
+  width: 100%;
+}
