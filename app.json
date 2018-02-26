@@ -5,8 +5,7 @@
   "env": {
     "INHERIT_THIS_CONFIG_VAR": {
       "required": true
-    },
-    "DONT_INHERIT_THIS_CONFIG_VAR": "production"
+    }
   },
   "formation": {
     "web": {
