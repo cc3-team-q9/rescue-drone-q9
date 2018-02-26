@@ -12,6 +12,6 @@ module.exports = () => {
 
   return ({
     messages: messages(knex),
-    flight_plans: flightPlans(knex),
+    flightPlans: flightPlans(knex),
   });
 };
