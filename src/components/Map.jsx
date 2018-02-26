@@ -17,7 +17,7 @@ const MyMap = withScriptjs(withGoogleMap(props => (
 const Map = ({ userLocation }) => (
   <MyMap
     className="myMap"
-    googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.GMAP_KEY}`}
+    googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCbwlqVCEnZdTeR6RbEPHm6xgHySVpimKk"
     userMarker={userLocation.position}
     loadingElement={
       <div style={{ height: '100%' }} />
