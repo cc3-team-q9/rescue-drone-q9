@@ -38,7 +38,7 @@ export async function setUserMessage(_username, _message, position) {
   const postData = {
     username: _username,
     message: _message,
-    longtitude: position.lat,
+    longitude: position.lat,
     latitude: position.lng,
   };
 

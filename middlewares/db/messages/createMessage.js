@@ -5,7 +5,7 @@ module.exports = (knex, Message) => async (params) => {
     const id = await knex('messages').insert({
       username: insertMassage.username,
       message: insertMassage.message,
-      longtitude: insertMassage.longtitude,
+      longitude: insertMassage.longitude,
       latitude: insertMassage.latitude,
     }, 'id');
 

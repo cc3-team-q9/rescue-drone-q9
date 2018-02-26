@@ -14,7 +14,7 @@ class Message {
       id: this.id,
       username: this.username,
       message: this.message,
-      longitude: this.longtitude,
+      longitude: this.longitude,
       latitude: this.latitude,
       calledAt: new Date(this.called_at),
     });
