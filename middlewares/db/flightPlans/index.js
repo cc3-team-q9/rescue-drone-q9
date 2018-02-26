@@ -12,7 +12,7 @@ class FlightPlan {
   seriarize() {
     return ({
       id: this.id,
-      geometry: this.geometry,
+      geometry: JSON.parse(this.geometry),
       takeoffLatitude: this.takeoff_latitude,
       takeoffLongitude: this.takeoff_longitude,
       maxAlittudeAgl: this.max_alittude_agl,
