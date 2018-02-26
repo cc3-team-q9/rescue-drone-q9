@@ -9,10 +9,9 @@ export default class EmergencyList extends Component {
   }
 
   render() {
-    console.log(this.props.userMessages);
     return (
       <ul className="EmergencyList">
-        {this.props.userMessages.map(eachMessage => (<li>{eachMessage.username}</li>))}
+        {this.props.userMessages.map(eachMessage => (<li key={eachMessage.id} >{eachMessage.username}</li>))}
       </ul>
     );
   }
@@ -24,7 +23,7 @@ EmergencyList.propTypes = {
     message: PropTypes.string.isRequired,
     longitude: PropTypes.number.isRequired,
     latitude: PropTypes.number.isRequired,
-    calledAt: PropTypes.instanceOf(Date).isRequired,
+    calledAt: PropTypes.string.isRequired,
   })),
   getEmergencyList: PropTypes.func.isRequired,
 };
