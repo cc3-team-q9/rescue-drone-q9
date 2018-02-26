@@ -8,6 +8,7 @@ const defaultState = {
   },
   helpMsg: '',
   currentView: 'User',
+  userMessages: [],
 };
 
 const mapReducer = (state = defaultState, action) => {
@@ -32,6 +33,11 @@ const mapReducer = (state = defaultState, action) => {
   case 'GO_USER': {
     return Object.assign({}, state, {
       currentView: 'User',
+    });
+  }
+  case 'GET_USER_MESSAGES': {
+    return Object.assign({}, state, {
+      userMessages: action.userMessages,
     });
   }
   default:

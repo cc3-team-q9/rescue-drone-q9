@@ -8,6 +8,9 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import App from './containers/App';
 import reducer from './reducers/index';
 
+require('babel-core/register');
+require('babel-polyfill');
+
 const createStoreWithMiddleware = compose(applyMiddleware(thunk))(createStore);
 
 const store = createStoreWithMiddleware(reducer);

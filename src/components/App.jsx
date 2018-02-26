@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Map from '../containers/Map';
 import Sidebar from '../containers/Sidebar';
 import Navbar from '../containers/Navbar';
-import EmergencyList from '../components/EmergencyList';
+import EmergencyList from '../containers/EmergencyList';
 
 class App extends Component {
   get currentView() {
@@ -34,5 +35,9 @@ class App extends Component {
     return this.currentView;
   }
 }
+
+App.propTypes = {
+  currentView: PropTypes.string.isRequired,
+};
 
 export default App;

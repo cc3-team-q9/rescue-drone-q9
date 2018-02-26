@@ -62,3 +62,24 @@ export async function setUserMessage(_username, _message, position) {
     throw new Error(error);
   }
 }
+
+export async function getUserMessages() {
+  try {
+    const response = await (await fetch(locationUri, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      method: 'GET',
+    })).json();
+
+    if (response.status >= 400) {
+      throw new Error('Fail to get data.');
+    }
+
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw new Error(error);
+  }
+}
