@@ -1,4 +1,4 @@
-const locationUri = 'api/messages';
+const locationUri = '/api/messages';
 
 function getPositionSuccess(pos) {
   const crd = pos.coords;
