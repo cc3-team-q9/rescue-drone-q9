@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 
 // router with db setup
 const config = require('./config');
+// If you add some middlewares, you can set configurations in config.js
+// But as to knex, the configuration is set in knexfile.
 const middlewares = require('./middlewares/index')(config);
 const apiRouter = require('./routes/api/index')(middlewares);
 
