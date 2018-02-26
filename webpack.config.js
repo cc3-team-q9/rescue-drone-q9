@@ -1,5 +1,5 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
+// const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -28,9 +28,9 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    new Dotenv({
-      path: './.env',
-    }),
+    // new Dotenv({
+    //   path: './.env',
+    // }),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'public'),
