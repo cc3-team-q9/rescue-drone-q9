@@ -1,17 +1,24 @@
 const Knex = require('knex');
 
+const config = require('./knexfile.js');
 const messages = require('./messages/index');
+
+const environment = process.env.NODE_ENV || 'development';
 // const flightPlans = require('./flightPlans/index');
 
-module.exports = (config) => {
-  const knex = Knex({
-    client: config.database.client,
-    connection: {
-      host: config.database.connection.host,
-      port: config.database.connection.port,
-      database: config.database.connection.database,
-    },
-  });
+const databaseConfig = config[environment];
+
+module.exports = () => {
+  // const knex = Knex({
+  //   client: databaseConfig.client,
+  //   connection: {
+  //     host: databaseConfig.connection.host,
+  //     port: databaseConfig.connection.port,
+  //     database: databaseConfig.connection.database,
+  //   },
+  // });
+
+  const knex = Knex(databaseConfig);
 
   return ({
     messages: messages(knex),
