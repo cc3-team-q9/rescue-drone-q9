@@ -1,11 +1,36 @@
+// Update with your config settings.
+
 module.exports = {
-  client: 'pg',
-  connection: {
-    host: process.env.DATABASE_URL || '127.0.0.1',
-    port: process.env.DATABASE_PORT || 5432,
-    database: 'rescue_drone',
+  development: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL || `postgres://${process.env.USER}@127.0.0.1:5432/truckstop`,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: `${__dirname}/migrations`,
+    },
+    searchPath: 'public',
+    seeds: {
+      directory: `${__dirname}/seeds`,
+    },
   },
-  migrations: {
-    tableName: 'knex_migrations',
+  production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL || `postgres://${process.env.USER}@127.0.0.1:5432/truckstop`,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: `${__dirname}/migrations`,
+    },
+    searchPath: 'public',
+    seeds: {
+      directory: `${__dirname}/seeds`,
+    },
   },
 };
