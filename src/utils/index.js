@@ -1,4 +1,4 @@
-const locationUri = '/api/messages';
+const locationUri = 'https://rescue-drone-q9-pr-6.herokuapp.com/api/messages';
 
 function getPositionSuccess(pos) {
   const crd = pos.coords;
