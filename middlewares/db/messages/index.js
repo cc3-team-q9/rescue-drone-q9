@@ -11,12 +11,12 @@ class Message {
 
   seriarize() {
     return ({
-      id: this.id,
-      username: this.username,
-      message: this.message,
-      longitude: this.longitude,
-      latitude: this.latitude,
-      calledAt: new Date(this.called_at),
+      id: this.message.id,
+      username: this.message.username,
+      message: this.message.message,
+      longitude: this.message.longitude,
+      latitude: this.message.latitude,
+      calledAt: new Date(this.message.called_at),
     });
   }
 }

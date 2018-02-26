@@ -12,7 +12,7 @@ export default class EmergencyList extends Component {
     console.log(this.props.userMessages);
     return (
       <ul className="EmergencyList">
-        {this.props.userMessages.map(eachMessage => (<li>{eachMessage.message.username}</li>))}
+        {this.props.userMessages.map(eachMessage => (<li>{eachMessage.username}</li>))}
       </ul>
     );
   }
