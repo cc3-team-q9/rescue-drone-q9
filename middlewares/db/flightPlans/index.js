@@ -11,15 +11,15 @@ class FlightPlan {
 
   seriarize() {
     return ({
-      id: this.id,
-      geometry: JSON.parse(this.geometry),
-      takeoffLatitude: this.takeoff_latitude,
-      takeoffLongitude: this.takeoff_longitude,
-      maxAlittudeAgl: this.max_alittude_agl,
-      pilotId: this.pilot_id,
-      startTime: new Date(this.start_time),
-      calledAt: new Date(this.called_at),
-      buffer: this.buffer,
+      id: this.flightPlan.id,
+      geometry: JSON.parse(this.flightPlan.geometry),
+      takeoffLatitude: this.flightPlan.takeoff_latitude,
+      takeoffLongitude: this.flightPlan.takeoff_longitude,
+      maxAlittudeAgl: this.flightPlan.max_alittude_agl,
+      pilotId: this.flightPlan.pilot_id,
+      startTime: new Date(this.flightPlan.start_time),
+      calledAt: new Date(this.flightPlan.called_at),
+      buffer: this.flightPlan.buffer,
     });
   }
 }
