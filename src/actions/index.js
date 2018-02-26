@@ -44,3 +44,11 @@ export function writeHelpMessage(message) {
     message,
   };
 }
+
+export function goAdmin() {
+  return { type: 'GO_ADMIN' };
+}
+
+export function goUser() {
+  return { type: 'GO_USER' };
+}

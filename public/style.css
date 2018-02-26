@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  color: white;
 }
 
 body {
@@ -66,14 +67,19 @@ body {
 
 .App-header {
   line-height: 5em;
-  color: white;
-}
-
-.App-header h2 {
-  margin: 0;
+  
 }
 
 .textHelp {
   height: 20em;
   width: 100%;
+}
+
+.navbar {
+  height: 5em;
+  margin-right: 5%;
+  text-align: right;
+}
+
+.navbar-button {
 }
