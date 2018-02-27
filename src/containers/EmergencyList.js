@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getEmergencyList: () => dispatch(getEmergencyList()),
-  goCreateFlightPlan: () => dispatch(goCreateFlightPlan())
+  goCreateFlightPlan: (userMessage) => dispatch(goCreateFlightPlan(userMessage))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EmergencyList);

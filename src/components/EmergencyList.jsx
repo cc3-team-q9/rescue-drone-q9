@@ -3,17 +3,32 @@ import PropTypes from 'prop-types';
 import { goCreateFlightPlan } from '../actions/index';
 
 export default class EmergencyList extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   async componentDidMount() {
     if (this.props.userMessages.length <= 0) {
       this.props.getEmergencyList();
     }
   }
 
+  handleClick(userMessage) {
+    console.log(userMessage);
+    this.props.setUserMessage(userMessage);
+    this.props.goCreateFlightPlan();
+  }
+
   render() {
     return (
       <ul className="EmergencyList">
-        {this.props.userMessages.map(eachMessage => (<li key={eachMessage.id} >{eachMessage.username}</li>))}
-        <button onClick={() => this.props.goCreateFlightPlan()}>Create Flight Plan</button>
+        {this.props.userMessages.map(eachMessage => (
+          <li key={eachMessage.id} >
+            {eachMessage.username}
+            <button onClick={() => this.handleClick(eachMessage)}>Create Flight Plan</button>
+          </li>        
+        ))}
       </ul>
     );
   }

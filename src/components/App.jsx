@@ -8,6 +8,18 @@ import EmergencyList from '../containers/EmergencyList';
 import CreateFlightPlan from '../components/CreateFlightPlan';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userMessage: {}
+    }
+    this.setUserMessage = this.setUserMessage.bind(this);
+  }
+
+  setUserMessage(userMessage) {
+    this.setState({ userMessage });
+  }
+
   get currentView() {
     if (this.props.currentView === 'User') {
       return (
@@ -29,7 +41,9 @@ class App extends Component {
           <div className="App-header">
             <Navbar id="navbar" />
           </div>
-          <EmergencyList />
+          <EmergencyList 
+            setUserMessage={this.setUserMessage}
+          />
         </div>
       );
     }
@@ -39,7 +53,9 @@ class App extends Component {
         <div className="App-header">
           <Navbar id="navbar" />
         </div>
-        <CreateFlightPlan />
+        <CreateFlightPlan 
+          userMessage={this.state.userMessage}
+        />
       </div>
     );
 

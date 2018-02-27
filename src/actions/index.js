@@ -54,7 +54,9 @@ export function goUser() {
 }
 
 export function goCreateFlightPlan() {
-  return { type: 'GO_CREATE_FLIGHT_PLAN' };
+  return { 
+    type: 'GO_CREATE_FLIGHT_PLAN', 
+  };
 }
 
 function getUserMessagesSuccess(userMessages) {

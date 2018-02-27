@@ -50,7 +50,7 @@ class CreatePolygon extends Component {
     });
 
     const destinationMarker = new google.maps.Marker({
-      position: this.state.destination,
+      position: { lat: this.props.lat, lng: this.props.lng },
       map: map,
       icon: {
         url: 'http://maps.google.co.jp/mapfiles/ms/icons/blue-dot.png',

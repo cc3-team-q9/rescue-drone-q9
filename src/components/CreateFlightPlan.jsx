@@ -15,18 +15,6 @@ class CreateFlightPlan extends Component {
     fetch('url')
       .then(res => res.json())
   }
-  
-  // getDestination() {
-  //   fetch('/api/messages')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       return { 
-  //         lat: data.lat,
-  //         lng: data.lng 
-  //       }
-  //     })
-  //     .then(destination => this.setState({ destination }))
-  // }
 
   render() {
     return (
@@ -71,7 +59,8 @@ class CreateFlightPlan extends Component {
           <div className='create-flight-plan-polygon' style={{ marginTop: 20, marginLeft: 20, width: "100%", fontFamily: 'sans-serif', fontSize: '18px', fontWeight: 'bold'}}>
             <CreatePolygon 
               label={'• Create GeoJSON Polygon of Flight Area'}
-              destination={this.state.destination}
+              lat={this.props.userMessage.latitude}
+              lng={this.props.userMessage.longitude}
             />
           </div>
         </div>
