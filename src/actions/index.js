@@ -1,4 +1,4 @@
-import { getUserMarker, setUserMessage } from '../utils/index';
+import { getUserMarker, setUserMessage, getUserMessages } from '../utils/index';
 
 function getMarkerSuccess(userLocation) {
   return {
@@ -43,4 +43,43 @@ export function writeHelpMessage(message) {
     type: 'WRITE_MESSAGE',
     message,
   };
+}
+
+export function goAdmin() {
+  return { type: 'GO_ADMIN' };
+}
+
+export function goUser() {
+  return { type: 'GO_USER' };
+}
+
+export function goCreateFlightPlan() {
+  return { 
+    type: 'GO_CREATE_FLIGHT_PLAN', 
+  };
+}
+
+function getUserMessagesSuccess(userMessages) {
+  return {
+    type: 'GET_USER_MESSAGES',
+    userMessages,
+  };
+}
+
+function getUserMessagesError(error) {
+  return {
+    type: 'GET_USER_MESSAGES_ERROR',
+    error,
+  };
+}
+
+export function getEmergencyList() {
+  return dispatch => (async () => {
+    try {
+      const response = await getUserMessages();
+      dispatch(getUserMessagesSuccess(response));
+    } catch (error) {
+      dispatch(getUserMessagesError(error));
+    }
+  })();
 }

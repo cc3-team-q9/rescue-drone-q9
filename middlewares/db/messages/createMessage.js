@@ -10,7 +10,7 @@ module.exports = (knex, Message) => async (params) => {
     }, 'id');
 
     const insertedMessage = await knex('messages').where('id', id[0]);
-    return insertedMessage.map(eachMessage => new Message(eachMessage));
+    return insertedMessage.map(eachMessage => new Message(eachMessage).seriarize());
   } catch (error) {
     return error;
   }

@@ -7,6 +7,8 @@ const defaultState = {
     },
   },
   helpMsg: '',
+  currentView: 'User',
+  userMessages: [],
 };
 
 const mapReducer = (state = defaultState, action) => {
@@ -21,6 +23,26 @@ const mapReducer = (state = defaultState, action) => {
   case 'WRITE_MESSAGE': {
     return Object.assign({}, state, {
       helpMsg: action.message,
+    });
+  }
+  case 'GO_ADMIN': {
+    return Object.assign({}, state, {
+      currentView: 'Admin',
+    });
+  }
+  case 'GO_USER': {
+    return Object.assign({}, state, {
+      currentView: 'User',
+    });
+  }
+  case 'GO_CREATE_FLIGHT_PLAN': {
+    return Object.assign({}, state, {
+      currentView: 'CreateFlightPlan',
+    });
+  }
+  case 'GET_USER_MESSAGES': {
+    return Object.assign({}, state, {
+      userMessages: action.userMessages,
     });
   }
   default:
