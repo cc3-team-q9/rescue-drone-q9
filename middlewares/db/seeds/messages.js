@@ -6,27 +6,27 @@ exports.seed = (knex, Promise) =>
       knex('messages').insert([
         {
           username: 'Alice',
-          message: 'Avalanche happends. Help me.',
-          latitude: 36.7477191,
-          longitude: 138.128287,
+          message: 'Avalanche happens. Help me.',
+          latitude: 35.6706505,
+          longitude: 139.7718614,
         },
         {
           username: 'Bob',
           message: 'Volcano erupts. Help me.',
-          latitude: 36.1695501,
-          longitude: 137.4549663,
+          latitude: 35.688431,
+          longitude: 139.698605,
         },
         {
           username: 'Satoshi',
-          message: 'Huge earthquake happends. Help me.',
-          latitude: 35.726134,
-          longitude: 136.3496945,
+          message: 'Huge earthquake happens. Help me.',
+          latitude: 35.6585805,
+          longitude: 139.7454329,
         },
         {
           username: 'Sephiroth',
           message: 'Reunion. Fire.',
-          latitude: 35.0736761,
-          longitude: 134.6303915,
+          latitude: 35.7100627,
+          longitude: 139.8107004,
         },
       ]));
 
