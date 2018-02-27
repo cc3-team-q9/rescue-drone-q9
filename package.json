@@ -8,7 +8,7 @@
         "start": "node index.js",
         "webpack": "webpack --watch",
         "hack": "webpack-dev-server",
-        "postinstall": "yarn build && yarn migrate",
+        "postinstall": "yarn build && yarn migrate && yarn seed",
         "build": "webpack",
         "migrate": "knex migrate:latest --knexfile ./middlewares/db/knexfile.js",
         "rollback": "knex migrate:rollback --knexfile ./middlewares/db/knexfile.js",
