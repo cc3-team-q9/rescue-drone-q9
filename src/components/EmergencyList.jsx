@@ -22,14 +22,25 @@ export default class EmergencyList extends Component {
 
   render() {
     return (
-      <ul className="EmergencyList">
+      <table className="EmergencyList">
+        <tr>
+          <th>Name</th>
+          <th>Message</th>
+          <th>Longitude</th>
+          <th>Latitude</th>
+          <th>Called at</th>
+        </tr>
         {this.props.userMessages.map(eachMessage => (
-          <li key={eachMessage.id} >
-            {eachMessage.username}
+          <tr key={eachMessage.id} >
+            <td>{eachMessage.username}</td>
+            <td>{eachMessage.message}</td>
+            <td>{eachMessage.longitude}</td>
+            <td>{eachMessage.latitude}</td>
+            <td>{eachMessage.calledAt}</td>
             <button onClick={() => this.handleClick(eachMessage)}>Create Flight Plan</button>
-          </li>        
+          </tr>
         ))}
-      </ul>
+      </table>
     );
   }
 }
