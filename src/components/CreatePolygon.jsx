@@ -88,6 +88,7 @@ class CreatePolygon extends Component {
     this.setState({
       polygon: copyStatePolygon
     });
+    this.props.savePolygon(copyStatePolygon);
   }
 
   render() {
