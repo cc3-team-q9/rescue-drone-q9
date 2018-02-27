@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { goCreateFlightPlan } from '../actions/index';
 
 export default class EmergencyList extends Component {
   async componentDidMount() {
@@ -12,6 +13,7 @@ export default class EmergencyList extends Component {
     return (
       <ul className="EmergencyList">
         {this.props.userMessages.map(eachMessage => (<li key={eachMessage.id} >{eachMessage.username}</li>))}
+        <button onClick={() => this.props.goCreateFlightPlan()}>Create Flight Plan</button>
       </ul>
     );
   }

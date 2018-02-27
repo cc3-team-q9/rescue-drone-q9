@@ -35,6 +35,11 @@ const mapReducer = (state = defaultState, action) => {
       currentView: 'User',
     });
   }
+  case 'GO_CREATE_FLIGHT_PLAN': {
+    return Object.assign({}, state, {
+      currentView: 'CreateFlightPlan',
+    });
+  }
   case 'GET_USER_MESSAGES': {
     return Object.assign({}, state, {
       userMessages: action.userMessages,

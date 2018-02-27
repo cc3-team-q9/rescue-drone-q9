@@ -53,6 +53,10 @@ export function goUser() {
   return { type: 'GO_USER' };
 }
 
+export function goCreateFlightPlan() {
+  return { type: 'GO_CREATE_FLIGHT_PLAN' };
+}
+
 function getUserMessagesSuccess(userMessages) {
   return {
     type: 'GET_USER_MESSAGES',

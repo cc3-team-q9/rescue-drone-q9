@@ -5,6 +5,7 @@ import Map from '../containers/Map';
 import Sidebar from '../containers/Sidebar';
 import Navbar from '../containers/Navbar';
 import EmergencyList from '../containers/EmergencyList';
+import CreateFlightPlan from '../components/CreateFlightPlan';
 
 class App extends Component {
   get currentView() {
@@ -21,14 +22,27 @@ class App extends Component {
         </div>
       );
     }
+
+    if (this.props.currentView === 'Admin') {
+      return (
+        <div className="App" style={{ height: '100%' }}>
+          <div className="App-header">
+            <Navbar id="navbar" />
+          </div>
+          <EmergencyList />
+        </div>
+      );
+    }
+
     return (
       <div className="App" style={{ height: '100%' }}>
         <div className="App-header">
           <Navbar id="navbar" />
         </div>
-        <EmergencyList />
+        <CreateFlightPlan />
       </div>
     );
+
   }
 
   render() {

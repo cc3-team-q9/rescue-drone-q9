@@ -31,9 +31,6 @@ class CreateFlightPlan extends Component {
   render() {
     return (
       <div className="rescue-team-app" style={{ height: "100%", width: "100%"}}>
-        <div className="rescue-team-app-header" style={{paddingLeft: '20px', fontSize: '20px'}}>
-          Rescue Drone Q9 - Create Flight Plan -
-        </div>
         <div className='create-flight-plan-area' style={{display: 'flex', backgroundColor: 'rgb(59, 66, 68)', color: 'white'}}>
           <div className='create-flight-plan-requirement' style={{fontFamily: 'sans-serif', fontSize: '18px', fontWeight: 'bold'}}>
             <div style={{ marginTop: 20, marginLeft: 20, marginBottom: 20}}>
