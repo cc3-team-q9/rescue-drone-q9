@@ -11,7 +11,8 @@
         "postinstall": "yarn build && yarn migrate",
         "build": "webpack",
         "migrate": "knex migrate:latest --knexfile ./middlewares/db/knexfile.js",
-        "rollback": "knex migrate:rollback --knexfile ./middlewares/db/knexfile.js"
+        "rollback": "knex migrate:rollback --knexfile ./middlewares/db/knexfile.js",
+        "seed": "knex seed:run --knexfile ./middlewares/db/knexfile.js"
     },
     "engines": {
         "node": ">=9.3.0",
