@@ -10,6 +10,7 @@ class SelectBox extends Component {
         'Krystalfjaij;hf;jakhgahkgkhkfa',
         'Christianfjaij;hf;jkfaafhkakrg',
         'Potatofjaij;hf;jkfaakjfhkjhjkr'
+<<<<<<< HEAD
       ],
       selectedPilotId: '',
     }
@@ -20,6 +21,10 @@ class SelectBox extends Component {
     e.preventDefault();
     this.setState({ selectedPilotId: e.target.value });
     this.props.savePilotId(e.target.value);
+=======
+      ]
+    } 
+>>>>>>> master
   }
 
   render() {
@@ -27,8 +32,13 @@ class SelectBox extends Component {
       <div className="selectbox">
         <label>
           {this.props.label}
+<<<<<<< HEAD
           <select className="select-field" value={this.state.selectedPilotId} onChange={e => this.handleChange(e)}>
             <option key={99} value={'Choose a pilot for this flight plan'}>{'Choose a pilot for this flight plan'}</option>
+=======
+          <select className="select-field" value={this.state.pilotId} onChange={e => this.handleChange(e)}>
+            <option key={99}>{'Choose a pilot for this flight plan'}</option>
+>>>>>>> master
             {this.state.pilotId.map((pilot, index) => (<option key={index} value={pilot}>{pilot}</option>))}
           </select>
         </label>

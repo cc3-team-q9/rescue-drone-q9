@@ -15,6 +15,10 @@ export default class EmergencyList extends Component {
   }
 
   handleClick(userMessage) {
+<<<<<<< HEAD
+=======
+    console.log(userMessage);
+>>>>>>> master
     this.props.setUserMessage(userMessage);
     this.props.goCreateFlightPlan();
   }
