@@ -9,7 +9,6 @@ class CreatePolygon extends Component {
       polygon: [
         { lat: 35.657986, lng: 139.727622 }
       ],
-      destination: { lat: 35.65506041125473, lng: 139.73166539967167 }
     }
     this.getLatLng = this.getLatLng.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -48,7 +47,6 @@ class CreatePolygon extends Component {
         url: 'http://maps.google.co.jp/mapfiles/ms/icons/helicopter.png',
       }
     });
-
     const destinationMarker = new google.maps.Marker({
       position: { lat: this.props.lat, lng: this.props.lng },
       map: map,

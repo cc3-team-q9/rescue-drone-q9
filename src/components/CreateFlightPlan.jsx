@@ -6,9 +6,6 @@ import Form from './Form';
 class CreateFlightPlan extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      destination: {}
-    }
   }
 
   getPilotId() {
@@ -17,6 +14,7 @@ class CreateFlightPlan extends Component {
   }
 
   render() {
+    console.log('here is CreteFlightPlan', this.props.userMessage);
     return (
       <div className="rescue-team-app" style={{ height: "100%", width: "100%"}}>
         <div className='create-flight-plan-area' style={{display: 'flex', backgroundColor: 'rgb(59, 66, 68)', color: 'white'}}>
