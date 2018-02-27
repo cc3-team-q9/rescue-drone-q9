@@ -6,7 +6,6 @@ import Form from './Form';
 class CreateFlightPlan extends Component {
   constructor(props){
     super(props);
-<<<<<<< HEAD
     this.state = {
       pilotId: '',
       maxAltitude: '',
@@ -23,8 +22,6 @@ class CreateFlightPlan extends Component {
     this.saveBuffer = this.saveBuffer.bind(this);
     this.savePolygon = this.savePolygon.bind(this);
     this.handleClick = this.handleClick.bind(this);
-=======
->>>>>>> master
   }
 
   getPilotId() {
@@ -32,7 +29,6 @@ class CreateFlightPlan extends Component {
       .then(res => res.json())
   }
 
-<<<<<<< HEAD
   savePilotId(pilotId) {
     this.setState({ pilotId })
   }
@@ -85,10 +81,6 @@ class CreateFlightPlan extends Component {
   }
 
   render() {
-=======
-  render() {
-    console.log('here is CreteFlightPlan', this.props.userMessage);
->>>>>>> master
     return (
       <div className="rescue-team-app" style={{ height: "100%", width: "100%"}}>
         <div className='create-flight-plan-area' style={{display: 'flex', backgroundColor: 'rgb(59, 66, 68)', color: 'white'}}>
@@ -96,23 +88,14 @@ class CreateFlightPlan extends Component {
             <div style={{ marginTop: 20, marginLeft: 20, marginBottom: 20}}>
               <SelectBox
                 label={'• Pilot (user) identifier'}
-<<<<<<< HEAD
                 savePilotId={this.savePilotId}
               />
             </div>
-=======
-              />
-            </div>
-
->>>>>>> master
             <div style={{ marginLeft: 20,marginBottom: 20}}>
               <Form 
                 label={'• Maximum altitude in meters Above Ground Level'}
                 example={'Example: 60.96'}
-<<<<<<< HEAD
                 saveFormContent={this.saveMaxAltitude}
-=======
->>>>>>> master
               />
             </div>
 
@@ -120,10 +103,7 @@ class CreateFlightPlan extends Component {
               <Form 
                 label={'• Start time of flight(cannot be in the past)'}
                 example={'Example: 2017-11-24T03:25:13 (Nov 24th, 3:25:13)'}
-<<<<<<< HEAD
                 saveFormContent={this.saveStartTime}
-=======
->>>>>>> master
               />
             </div>
 
@@ -131,10 +111,7 @@ class CreateFlightPlan extends Component {
               <Form 
                 label={'• End time of flight(must be after start time)'}
                 example={'Example: 2017-11-24T03:25:13 (Nov 24th, 3:25:13)'}
-<<<<<<< HEAD
                 saveFormContent={this.saveEndTime}
-=======
->>>>>>> master
               />
             </div>
 
@@ -142,15 +119,10 @@ class CreateFlightPlan extends Component {
               <Form 
                 label={'• Buffer(must be at least 1 and bounds 0, 2000)'}
                 example={'Example: 1'}
-<<<<<<< HEAD
                 saveFormContent={this.saveBuffer}
               />
             </div>
             <button onClick={() => this.handleClick()}>Submit</button>
-=======
-              />
-            </div>
->>>>>>> master
           </div>
 
           <div className='create-flight-plan-polygon' style={{ marginTop: 20, marginLeft: 20, width: "100%", fontFamily: 'sans-serif', fontSize: '18px', fontWeight: 'bold'}}>
@@ -158,10 +130,7 @@ class CreateFlightPlan extends Component {
               label={'• Create GeoJSON Polygon of Flight Area'}
               lat={this.props.userMessage.latitude}
               lng={this.props.userMessage.longitude}
-<<<<<<< HEAD
               savePolygon={this.savePolygon}
-=======
->>>>>>> master
             />
           </div>
         </div>

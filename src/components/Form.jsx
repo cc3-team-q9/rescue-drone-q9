@@ -12,10 +12,7 @@ class Form extends Component {
   handleChange(e) {
     e.preventDefault();
     this.setState({ value: e.target.value });
-<<<<<<< HEAD
     this.props.saveFormContent(e.target.value);
-=======
->>>>>>> master
   }
 
   render() {
