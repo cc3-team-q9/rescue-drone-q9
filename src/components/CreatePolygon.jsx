@@ -34,10 +34,10 @@ class CreatePolygon extends Component {
 
   componentDidMount() {
     const map = new window.google.maps.Map(ReactDOM.findDOMNode(this.refs.map), {
-        center: new window.google.maps.LatLng(35.657986, 139.727622),
-        zoom: 10,
-        mapTypeId: 'roadmap',
-      },);
+      center: new window.google.maps.LatLng(35.657986, 139.727622),
+      zoom: 12,
+      mapTypeId: 'roadmap',
+    });
     const basementMarker = new google.maps.Marker({
       position: { lat: 35.657986, lng: 139.727622 },
       map,
