@@ -16,7 +16,7 @@ class HelpMessage extends Component {
             Longitude: {this.props.userLocation.position.lng}<br />
             Latitude: {this.props.userLocation.position.lat}<br />
           </div>
-          <form onSubmit={this.handleSubmit}>
+          <form className="help-message-form" onSubmit={this.handleSubmit}>
             <div>
               <label htmlFor="helpMsg">
                 Your Help Message:
@@ -28,7 +28,11 @@ class HelpMessage extends Component {
         </div>
       );
     }
-    return <div />;
+    return (
+      <div className="page-icon">
+        <img src="./icon.png" alt="icon" />
+      </div>
+    );
   }
 
   handleChange(event) {

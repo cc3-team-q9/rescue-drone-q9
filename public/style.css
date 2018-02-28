@@ -20,11 +20,12 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 24px;
+  margin: 4px auto;
   border-radius: 12px;
   transition-duration: 0.4s;
   cursor: pointer;
+  width: 65%;
 }
 
 .button:hover {
@@ -61,8 +62,12 @@ body {
   width: 25%;
   color: #eee;
   background-color: rgb(59, 66, 68);
-  text-align: left;
+  text-align: center;
   padding: 0% 2%;
+}
+
+.sidebar h3 {
+  font-size: 48px;
 }
 
 .App-header {
@@ -75,13 +80,38 @@ body {
   width: 100%;
 }
 
+
 .navbar {
   height: 5em;
   margin-right: 5%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.navbar-icon {
+  flex: 1;
+}
+
+.navbar-icon img {
+  display: block;
+  margin: 0 auto;
+  height: 4em;
+  width: auto;
+}
+
+.navbar-buttons {
+  flex: 9;
   text-align: right;
 }
 
 .navbar-button {
+  margin: 5px 10px;
+  height: 2em;
+  width: 5em;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .EmergencyList {
@@ -103,4 +133,21 @@ body {
 
 .EmergencyList button {
   margin-left: 20px;
+}
+
+.help-message-form {
+  margin: 100px auto;    
+}
+
+.page-icon {
+  height: 80%;
+  width: 80%;
+  margin: 100px auto;
+}
+
+.page-icon img {
+  display: block;
+  margin: 0 auto;
+  height: 60%;
+  width: auto;
 }
