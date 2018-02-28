@@ -34,12 +34,13 @@ export function getUserMarker() {
   });
 }
 
-export async function setUserMessage(_username, _message, position) {
+export async function setUserMessage(_username, _message, userLocation) {
+  console.log(userLocation[0].position);
   const postData = {
     username: _username,
     message: _message,
-    longitude: position.lng,
-    latitude: position.lat,
+    longitude: userLocation[0].position.lng,
+    latitude: userLocation[0].position.lat,
   };
 
   try {

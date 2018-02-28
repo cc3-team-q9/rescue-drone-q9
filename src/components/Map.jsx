@@ -7,10 +7,13 @@ const MyMap = withScriptjs(withGoogleMap(props => (
     defaultZoom={12}
     defaultCenter={{ lat: 35.681382, lng: 139.76608399999998 }}
   >
-    <Marker
-      position={{ lat: +props.userMarker.lat, lng: +props.userMarker.lng }}
-      defaultAnimation={1}
-    />
+    {props.markers.map((marker, index) => (
+      <Marker
+        key={index}
+        position={{ lat: +marker.position.lat, lng: +marker.position.lng }}
+        animation={1}
+      />
+    ))}
   </GoogleMap>
 )));
 
@@ -18,7 +21,7 @@ const Map = ({ userLocation }) => (
   <MyMap
     className="myMap"
     googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCbwlqVCEnZdTeR6RbEPHm6xgHySVpimKk"
-    userMarker={userLocation.position}
+    markers={userLocation}
     loadingElement={
       <div style={{ height: '100%' }} />
     }
@@ -33,7 +36,7 @@ const Map = ({ userLocation }) => (
 
 Map.propTypes = {
   userLocation: PropTypes
-    .objectOf(PropTypes.objectOf(PropTypes.number, PropTypes.number)).isRequired,
+    .arrayOf(PropTypes.objectOf(PropTypes.number, PropTypes.number)).isRequired,
 };
 
 export default Map;
