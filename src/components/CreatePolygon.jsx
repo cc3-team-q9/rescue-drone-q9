@@ -36,7 +36,7 @@ class CreatePolygon extends Component {
     const map = new window.google.maps.Map(
       ReactDOM.findDOMNode(this.refs["map"]), {
         center: new window.google.maps.LatLng(35.657986, 139.727622),
-        zoom: 16,
+        zoom: 10,
         mapTypeId: 'roadmap'
       }
     );
@@ -45,13 +45,15 @@ class CreatePolygon extends Component {
       map: map,
       icon: {
         url: 'http://maps.google.co.jp/mapfiles/ms/icons/helicopter.png',
+        scaledSize: new google.maps.Size(64, 64),
       }
     });
     const destinationMarker = new google.maps.Marker({
       position: { lat: this.props.lat, lng: this.props.lng },
       map: map,
       icon: {
-        url: 'http://maps.google.co.jp/mapfiles/ms/icons/blue-dot.png',
+        url: 'http://www.google.com/mapfiles/gadget/arrowSmall80.png',
+        scaledSize: new google.maps.Size(62, 54),
       }
     });
 
@@ -94,10 +96,10 @@ class CreatePolygon extends Component {
   render() {
     return (
       <div className='selectbox'>
-        <div>
+        <div style={{textAlign: 'left'}}>
           {this.props.label}
         </div>
-        <button onClick={e => this.handleClick(e)}>Create Polygon</button>
+        <button onClick={e => this.handleClick(e)}  style={{ marginTop: 10, marginBottom: 20}}>Create</button>
         <div ref='map' className="myMap" style={{ height: '700px' }}></div>
       </div> 
     )
