@@ -17,6 +17,16 @@ app.use(logger('dev'));
 app.use(bodyParser.json({ type: 'application/json' }));
 // you cannot send nested objects to a server.
 app.use(bodyParser.urlencoded({ extended: false }));
+app.enable('trust proxy');
+
+// Route http to https
+app.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    res.redirect(`https://${req.headers.host}${req.url}`);
+  }
+});
 
 app.use('/api', apiRouter);
 app.use(express.static(path.join(__dirname, './public')));
