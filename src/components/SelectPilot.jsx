@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SelectPilot extends Component {
   constructor(props) {
@@ -9,10 +10,10 @@ class SelectPilot extends Component {
         'Bill Smith',
         'Krystal Williams',
         'Christian Miller',
-        'Potato Davis'
+        'Potato Davis',
       ],
       selectedPilotId: '',
-    }
+    };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -24,12 +25,12 @@ class SelectPilot extends Component {
 
   render() {
     return (
-      <div className="select-pilot" style={{textAlign: 'left'}}>
+      <div className="select-pilot" style={{ textAlign: 'left' }}>
         <label>
           {this.props.label}
-          <div style={{ marginTop: 10}}>
+          <div style={{ marginTop: 10 }}>
             <select className="select-pilot-field" value={this.state.selectedPilotId} onChange={e => this.handleChange(e)}>
-              <option key={99} value={'Select a pilot'}>{'Select a pilot'}</option>
+              <option key={99} value="Select a pilot">Select a pilot</option>
               {this.state.pilotId.map((pilot, index) => (<option key={index} value={pilot}>{pilot}</option>))}
             </select>
           </div>
@@ -38,6 +39,10 @@ class SelectPilot extends Component {
     );
   }
 }
+
+SelectPilot.propTypes = {
+  savePilotId: PropTypes.func.isRequired,
+};
 
 export default SelectPilot;
 

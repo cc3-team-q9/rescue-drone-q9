@@ -16,12 +16,9 @@ body {
   background-color: #f44336;
   border: 2px solid #f44336;
   color: white;
-  padding: 8px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px;
-  margin: 4px auto;
   border-radius: 12px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -37,13 +34,62 @@ body {
   outline: 0;
 }
 
-.textHelp {
+.sidebar {
+  display: flex;
+  flex-flow: column nowrap;
+  float: right;
+  height: 100%;
+  width: 25%;
+  color: #eee;
+  background-color: rgb(59, 66, 68);
+  text-align: center;
+  padding: 0% 2%;
+}
+
+.help-form {
+  flex: 1;
+}
+
+.help-message {
+  flex: 3;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.help-button {
+  font-size: 24px;
+  height: 2em;
+}
+
+.help-message-table {
+  flex: 1;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32px;
+}
+
+.help-message-form {
+  flex: 2;
+  margin: 20px 20px;
+  font-size: 24px;
+}
+
+.text-help {
   padding: 10px 10px;
+  height: 60%;
+  width: 80%;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
+  font-size: 16px;
+}
+
+.help-message-button {
+  margin: 20px auto;
+  font-size: 24px;
+  height: 2em;
 }
 
 .App {
@@ -52,19 +98,10 @@ body {
 
 .map {
   width: 71%;
-  height: 85%;
+  height: 100%;
   float: left;
 }
 
-.sidebar {
-  float: right;
-  height: 85%;
-  width: 25%;
-  color: #eee;
-  background-color: rgb(59, 66, 68);
-  text-align: center;
-  padding: 0% 2%;
-}
 
 .sidebar h3 {
   font-size: 48px;
@@ -79,7 +116,6 @@ body {
   height: 20em;
   width: 100%;
 }
-
 
 .navbar {
   height: 5em;
@@ -109,9 +145,8 @@ body {
   margin: 5px 10px;
   height: 2em;
   width: 5em;
-  text-align: center;
-  border-radius: 5px;
   font-size: 20px;
+  border: 0;
 }
 
 .EmergencyList {
@@ -122,21 +157,14 @@ body {
 }
 
 .EmergencyList th {
-  color: goldenrod;
+  color: #d0f4d9;
   text-decoration: underline;
+  font-style: italic;
 }
 
 .EmergencyList td {
   padding: 5px 10px;
   letter-spacing: 2px;
-}
-
-.EmergencyList button {
-  margin-left: 20px;
-}
-
-.help-message-form {
-  margin: 100px auto;    
 }
 
 .page-icon {
@@ -151,3 +179,12 @@ body {
   height: 60%;
   width: auto;
 }
+
+.create-flight-button {
+  margin: 5px 10px;
+  height: 2em;
+  width: 10em;
+  border-radius: 5px;
+  font-size: 20px;
+}
+

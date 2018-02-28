@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 export default class EmergencyList extends Component {
   constructor(props) {
@@ -37,9 +38,13 @@ export default class EmergencyList extends Component {
               <td>{eachMessage.message}</td>
               <td>{eachMessage.longitude}</td>
               <td>{eachMessage.latitude}</td>
-              <td>{eachMessage.calledAt}</td>
+              <td>{moment(eachMessage.calledAt).fromNow()}</td>
               <td>
-                <button onClick={() => this.handleClick(eachMessage)}>CreateFlightPlan</button>
+                <button
+                  className="button create-flight-button"
+                  onClick={() => this.handleClick(eachMessage)}
+                >CreateFlightPlan
+                </button>
               </td>
             </tr>
           ))}
