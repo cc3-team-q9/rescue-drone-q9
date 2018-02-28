@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { goCreateFlightPlan } from '../actions/index';
 
 export default class EmergencyList extends Component {
   constructor(props) {
@@ -22,23 +21,29 @@ export default class EmergencyList extends Component {
   render() {
     return (
       <table className="EmergencyList">
-        <tr>
-          <th>Name</th>
-          <th>Message</th>
-          <th>Longitude</th>
-          <th>Latitude</th>
-          <th>Called at</th>
-        </tr>
-        {this.props.userMessages.map(eachMessage => (
-          <tr key={eachMessage.id} >
-            <td>{eachMessage.username}</td>
-            <td>{eachMessage.message}</td>
-            <td>{eachMessage.longitude}</td>
-            <td>{eachMessage.latitude}</td>
-            <td>{eachMessage.calledAt}</td>
-            <button onClick={() => this.handleClick(eachMessage)}>Create Flight Plan</button>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Message</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+            <th>Called at</th>
           </tr>
-        ))}
+        </thead>
+        <tbody>
+          {this.props.userMessages.map(eachMessage => (
+            <tr key={eachMessage.id} >
+              <td>{eachMessage.username}</td>
+              <td>{eachMessage.message}</td>
+              <td>{eachMessage.longitude}</td>
+              <td>{eachMessage.latitude}</td>
+              <td>{eachMessage.calledAt}</td>
+              <td>
+                <button onClick={() => this.handleClick(eachMessage)}>CreateFlightPlan</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     );
   }
@@ -51,6 +56,8 @@ EmergencyList.propTypes = {
     longitude: PropTypes.number.isRequired,
     latitude: PropTypes.number.isRequired,
     calledAt: PropTypes.string.isRequired,
-  })),
+  })).isRequired,
   getEmergencyList: PropTypes.func.isRequired,
+  setUserMessage: PropTypes.func.isRequired,
+  goCreateFlightPlan: PropTypes.func.isRequired,
 };
