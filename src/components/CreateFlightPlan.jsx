@@ -166,7 +166,10 @@ class CreateFlightPlan extends Component {
         Accept: 'application/json',
       })
     })
-    .then(() => console.log('Successfully add this flight plan'))
+    .then(() => {
+      console.log('Successfully add this flight plan');
+      alert('This flight plan was submitted to AIRMAP API');  
+    })
     .catch(err => console.log(err))
   }
 
