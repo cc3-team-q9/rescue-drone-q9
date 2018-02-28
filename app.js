@@ -23,11 +23,15 @@ app.enable('trust proxy');
 
 // Route http to https
 app.use((req, res, next) => {
-  if (req.secure) {
+  if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
+    if (!req.secure) {
+      res.redirect(`https://${req.headers.host}${req.url}`);
+      return;
+    }
     next();
-  } else {
-    res.redirect(`https://${req.headers.host}${req.url}`);
+    return;
   }
+  next();
 });
 
 app.use('/api', apiRouter);
