@@ -3,16 +3,21 @@ import PropTypes from 'prop-types';
 
 const Navbar = ({ goAdmin, goUser }) => (
   <div className="navbar">
-    <button
-      className="navbar-button"
-      onClick={() => goAdmin()}
-    >Admin
-    </button>
-    <button
-      className="navbar-button"
-      onClick={() => goUser()}
-    >User
-    </button>
+    <div className="navbar-icon">
+      <img src="./icon.png" alt="icon" />
+    </div>
+    <div className="navbar-buttons">
+      <button
+        className="navbar-button"
+        onClick={() => goAdmin()}
+      >Admin
+      </button>
+      <button
+        className="navbar-button"
+        onClick={() => goUser()}
+      >User
+      </button>
+    </div>
   </div>
 );
 
