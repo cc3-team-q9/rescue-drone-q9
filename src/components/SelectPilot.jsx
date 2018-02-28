@@ -25,7 +25,7 @@ class SelectPilot extends Component {
 
   render() {
     return (
-      <div className="select-pilot" style={{ textAlign: 'left' }}>
+      <div className="select-pilot">
         <label>
           {this.props.label}
           <div style={{ marginTop: 10 }}>

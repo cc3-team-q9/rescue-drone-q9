@@ -22,11 +22,5 @@ exports.seed = (knex, Promise) =>
           latitude: 35.6585805,
           longitude: 139.7454329,
         },
-        {
-          username: 'Sephiroth',
-          message: 'Reunion. Fire.',
-          latitude: 35.7100627,
-          longitude: 139.8107004,
-        },
       ]));
 

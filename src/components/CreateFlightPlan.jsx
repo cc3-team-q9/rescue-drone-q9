@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CreatePolygon from './CreatePolygon';
 import SelectPilot from './SelectPilot';
 import Form from './Form';
-import SelectBox from './SelectBox';
 
 class CreateFlightPlan extends Component {
   constructor(props) {
@@ -106,25 +105,20 @@ class CreateFlightPlan extends Component {
 
   render() {
     return (
-      <div className="rescue-team-app" style={{ height: '100%', width: '100%' }}>
-        <div className="create-flight-plan-area" style={{ display: 'flex', backgroundColor: 'rgb(59, 66, 68)', color: 'white' }}>
-          <div className="create-flight-plan-requirement" style={{ fontFamily: 'sans-serif', fontSize: '18px', fontWeight: 'bold' }}>
-            <div style={{ marginTop: 20, marginLeft: 20, marginBottom: 20 }}>
-              <SelectPilot
-                label="Pilot"
-                savePilotId={this.savePilotId}
-              />
-            </div>
-            <div style={{ marginLeft: 20, marginBottom: 20 }}>
-              <Form
-                label="Maximum altitude in meters above ground level"
-                example="Example: 60.96"
-                saveFormContent={this.saveMaxAltitude}
-              />
-            </div>
-
-            <div style={{ marginLeft: 20, marginBottom: 20 }}>
-              <div style={{ textAlign: 'left', marginBottom: 10 }}>Start time of flight(cannot be in the past)</div>
+      <div className="rescue-team-app">
+        <div className="create-flight-plan-area">
+          <div className="create-flight-plan-requirement">
+            <SelectPilot
+              label="Pilot"
+              savePilotId={this.savePilotId}
+            />
+            <Form
+              label="Maximum altitude in meters above ground level"
+              example="Example: 60.96"
+              saveFormContent={this.saveMaxAltitude}
+            />
+            <div className="set-time-div">
+              <div className="set-time-title">Start time of flight(cannot be in the past)</div>
               <div style={{ textAlign: 'left', fontSize: '16px', fontWeight: 'initial' }}>Select date and time</div>
               <div style={{ display: 'flex' }}>
                 <form>
@@ -150,7 +144,7 @@ class CreateFlightPlan extends Component {
                 saveFormContent={this.saveBuffer}
               />
             </div>
-            <button onClick={() => this.handleClick()}>Submit</button>
+            <button onClick={() => this.handleClick()}>Submit Flight plan</button>
           </div>
 
           <div
