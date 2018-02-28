@@ -36,7 +36,7 @@ const Map = ({ userLocation }) => (
 
 Map.propTypes = {
   userLocation: PropTypes
-    .arrayOf(PropTypes.objectOf(PropTypes.number, PropTypes.number)).isRequired,
+    .arrayOf(PropTypes.objectOf(PropTypes.objectOf(PropTypes.number, PropTypes.number))).isRequired,
 };
 
 export default Map;

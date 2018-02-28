@@ -3,10 +3,6 @@ const locationUri = '/api/messages';
 function getPositionSuccess(pos) {
   const crd = pos.coords;
 
-  console.log('Your current position is:');
-  console.log(`Latitude : ${crd.latitude}`);
-  console.log(`Longitude: ${crd.longitude}`);
-
   const locationData = {
     lng: +crd.longitude,
     lat: +crd.latitude,
@@ -35,7 +31,6 @@ export function getUserMarker() {
 }
 
 export async function setUserMessage(_username, _message, userLocation) {
-  console.log(userLocation[0].position);
   const postData = {
     username: _username,
     message: _message,

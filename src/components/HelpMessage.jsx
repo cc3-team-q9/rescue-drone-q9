@@ -58,7 +58,7 @@ HelpMessage.propTypes = {
   registerUserMessage: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
   userLocation: PropTypes
-    .arrayOf(PropTypes.objectOf(PropTypes.number, PropTypes.number)).isRequired,
+    .arrayOf(PropTypes.objectOf(PropTypes.objectOf(PropTypes.number, PropTypes.number))).isRequired,
   writeHelpMessage: PropTypes.func.isRequired,
 };
 
