@@ -17,10 +17,10 @@ class Form extends Component {
 
   render() {
     return (
-      <div className='form'>
+      <div className='form' style={{textAlign: 'left', marginBottom: 10}}>
           <label>
             {this.props.label}
-            <div className='example'>
+            <div className='example' style={{marginTop: 10, marginBottom: 10, fontSize: '16px', fontWeight: 'initial'}}>
               {this.props.example}
             </div>
             <input type='text' value={this.state.value} onChange={e => this.handleChange(e)}/> 
