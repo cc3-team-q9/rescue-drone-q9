@@ -9,21 +9,26 @@ class HelpMessage extends Component {
   }
 
   get currentView() {
-    if (this.props.userLocation.position.lat && this.props.userLocation.position.lat) {
+    if (this.props.userLocation.length > 0) {
       return (
-        <div>
-          <div style={{ marginTop: '15px', marginBottom: '15px' }}>
-            Longitude: {this.props.userLocation.position.lng}<br />
-            Latitude: {this.props.userLocation.position.lat}<br />
-          </div>
+        <div className="help-message">
+          <table className="help-message-table">
+            <tbody>
+              <tr><td>Latitude:</td></tr>
+              <tr><td>{this.props.userLocation[0].position.lat}</td></tr>
+              <tr><td>Longitude:</td></tr>
+              <tr><td>{this.props.userLocation[0].position.lng}</td></tr>
+            </tbody>
+          </table>
           <form className="help-message-form" onSubmit={this.handleSubmit}>
-            <div>
-              <label htmlFor="helpMsg">
-                Your Help Message:
-                <textarea className="textHelp" onChange={this.handleChange} />
-              </label>
-            </div>
-            <input className="button" type="submit" value="Send" />
+            <label htmlFor="help-messsage-label">
+              <textarea
+                className="text-help"
+                placeholder="Your Help Message is here:"
+                onChange={this.handleChange}
+              />
+            </label>
+            <input className="button help-message-button" type="submit" value="Send" />
           </form>
         </div>
       );
@@ -47,7 +52,7 @@ class HelpMessage extends Component {
     this.props.registerUserMessage(
       this.props.username,
       this.props.helpMsg,
-      this.props.userLocation.position,
+      this.props.userLocation,
     );
     alert(`Your help message was submitted to the Rescue Drone Q9 Team:\n${this.props.helpMsg}`);
   }
@@ -62,7 +67,7 @@ HelpMessage.propTypes = {
   registerUserMessage: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
   userLocation: PropTypes
-    .objectOf(PropTypes.objectOf(PropTypes.number, PropTypes.number)).isRequired,
+    .arrayOf(PropTypes.objectOf(PropTypes.objectOf(PropTypes.number, PropTypes.number))).isRequired,
   writeHelpMessage: PropTypes.func.isRequired,
 };
 

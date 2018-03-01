@@ -8,12 +8,12 @@ const Navbar = ({ goAdmin, goUser }) => (
     </div>
     <div className="navbar-buttons">
       <button
-        className="navbar-button"
+        className="button navbar-button"
         onClick={() => goAdmin()}
       >Admin
       </button>
       <button
-        className="navbar-button"
+        className="button navbar-button"
         onClick={() => goUser()}
       >User
       </button>

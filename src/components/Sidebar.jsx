@@ -16,9 +16,9 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar">
-        <form onSubmit={this.handleSubmit}>
+        <form className="help-form" onSubmit={this.handleSubmit}>
           <h3>Call for Help</h3>
-          <input className="button" type="submit" value="Help" />
+          <input className="button help-button" type="submit" value="Help" />
         </form>
         <HelpMessage />
       </div>

@@ -7,9 +7,9 @@ class CreatePolygon extends Component {
     this.state = {
       map: null,
       polygon: [
-        { lat: 35.657986, lng: 139.727622 }
+        { lat: 35.657986, lng: 139.727622 },
       ],
-    }
+    };
     this.getLatLng = this.getLatLng.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -17,44 +17,42 @@ class CreatePolygon extends Component {
   getLatLng(latAndLng, map) {
     const marker = new google.maps.Marker({
       position: latAndLng,
-      map: map
+      map,
     });
     map.panTo(latAndLng);
     const copyStatePolygon = this.state.polygon.slice();
 
     copyStatePolygon.push({
       lat: latAndLng.lat(),
-      lng: latAndLng.lng()
+      lng: latAndLng.lng(),
     });
 
     this.setState({
-      polygon: copyStatePolygon
+      polygon: copyStatePolygon,
     });
   }
 
-  componentDidMount () {
-    const map = new window.google.maps.Map(
-      ReactDOM.findDOMNode(this.refs["map"]), {
-        center: new window.google.maps.LatLng(35.657986, 139.727622),
-        zoom: 10,
-        mapTypeId: 'roadmap'
-      }
-    );
+  componentDidMount() {
+    const map = new window.google.maps.Map(ReactDOM.findDOMNode(this.refs.map), {
+      center: new window.google.maps.LatLng(35.657986, 139.727622),
+      zoom: 14,
+      mapTypeId: 'roadmap',
+    });
     const basementMarker = new google.maps.Marker({
       position: { lat: 35.657986, lng: 139.727622 },
-      map: map,
+      map,
       icon: {
-        url: 'http://maps.google.co.jp/mapfiles/ms/icons/helicopter.png',
+        url: 'https://maps.google.co.jp/mapfiles/ms/icons/helicopter.png',
         scaledSize: new google.maps.Size(64, 64),
-      }
+      },
     });
     const destinationMarker = new google.maps.Marker({
       position: { lat: this.props.lat, lng: this.props.lng },
-      map: map,
+      map,
       icon: {
-        url: 'http://www.google.com/mapfiles/gadget/arrowSmall80.png',
+        url: 'https://www.google.com/mapfiles/gadget/arrowSmall80.png',
         scaledSize: new google.maps.Size(62, 54),
-      }
+      },
     });
 
     map.addListener('click', (e) => {
@@ -66,14 +64,14 @@ class CreatePolygon extends Component {
       console.log('lat', e.latLng.lat(), 'lng', e.latLng.lng());
       this.getLatLng(e.latLng, map);
     });
-    
+
     this.setState({ map });
-    console.log('map is open')
+    console.log('map is open');
   }
 
   handleClick(e) {
     e.preventDefault();
-    
+
     const copyStatePolygon = this.state.polygon.slice();
     copyStatePolygon.push(copyStatePolygon[0]);
     console.log(copyStatePolygon);
@@ -83,26 +81,31 @@ class CreatePolygon extends Component {
       geodesic: true,
       strokeColor: '#FF0000',
       strokeOpacity: 1.0,
-      strokeWeight: 10
+      strokeWeight: 10,
     });
     flightPath.setMap(this.state.map);
 
     this.setState({
-      polygon: copyStatePolygon
+      polygon: copyStatePolygon,
     });
     this.props.savePolygon(copyStatePolygon);
   }
 
   render() {
     return (
-      <div className='selectbox'>
-        <div style={{textAlign: 'left'}}>
+      <div className="selectbox">
+        <div style={{ textAlign: 'left' }}>
           {this.props.label}
         </div>
-        <button onClick={e => this.handleClick(e)}  style={{ marginTop: 10, marginBottom: 20}}>Create</button>
-        <div ref='map' className="myMap" style={{ height: '700px' }}></div>
-      </div> 
-    )
+        <button
+          className="button draw-polygon-button"
+          onClick={e => this.handleClick(e)}
+          style={{ marginTop: 10, marginBottom: 20 }}
+        >Draw Flight Area
+        </button>
+        <div ref="map" className="myMap" style={{ height: '700px' }} />
+      </div>
+    );
   }
 }
 
