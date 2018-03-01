@@ -13,10 +13,12 @@ class HelpMessage extends Component {
       return (
         <div className="help-message">
           <table className="help-message-table">
-            <tr><td>Latitude:</td></tr>
-            <tr><td>{this.props.userLocation[0].position.lat}</td></tr>
-            <tr><td>Longitude:</td></tr>
-            <tr><td>{this.props.userLocation[0].position.lng}</td></tr>
+            <tbody>
+              <tr><td>Latitude:</td></tr>
+              <tr><td>{this.props.userLocation[0].position.lat}</td></tr>
+              <tr><td>Longitude:</td></tr>
+              <tr><td>{this.props.userLocation[0].position.lng}</td></tr>
+            </tbody>
           </table>
           <form className="help-message-form" onSubmit={this.handleSubmit}>
             <label htmlFor="help-messsage-label">
