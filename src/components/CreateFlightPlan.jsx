@@ -113,12 +113,12 @@ class CreateFlightPlan extends Component {
               savePilotId={this.savePilotId}
             />
             <Form
-              label="Maximum altitude in meters above ground level"
+              label="Maximum altitude"
               example="Example: 60.96"
               saveFormContent={this.saveMaxAltitude}
             />
             <div className="set-time-div">
-              <div className="set-time-title">Start time of flight(cannot be in the past)</div>
+              <div className="set-time-title">Start time (cannot be in the past)</div>
               <div className="set-time-direction">Select date and time</div>
               <div>
                 <form>
@@ -128,7 +128,7 @@ class CreateFlightPlan extends Component {
             </div>
 
             <div className="set-time-div">
-              <div className="set-time-title">End time of flight(must be after start time</div>
+              <div className="set-time-title">End time (must be after start time</div>
               <div className="set-time-direction">Select date and time</div>
               <div>
                 <form>
@@ -139,7 +139,7 @@ class CreateFlightPlan extends Component {
 
             <div style={{ marginBottom: 20 }}>
               <Form
-                label="Buffer(must be at least 1 and bounds 0 to 2000)"
+                label="Buffer (must be bound 1 to 2000)"
                 example="Example: 1"
                 saveFormContent={this.saveBuffer}
               />
