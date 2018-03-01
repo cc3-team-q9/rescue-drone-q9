@@ -137,7 +137,7 @@ class CreateFlightPlan extends Component {
               </div>
             </div>
 
-            <div style={{ marginLeft: 20, marginBottom: 20 }}>
+            <div style={{ marginBottom: 20 }}>
               <Form
                 label="Buffer(must be at least 1 and bounds 0 to 2000)"
                 example="Example: 1"
