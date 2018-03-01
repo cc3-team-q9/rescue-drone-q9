@@ -128,7 +128,7 @@ class CreateFlightPlan extends Component {
             </div>
 
             <div className="set-time-div">
-              <div className="set-time-title">End time (must be after start time</div>
+              <div className="set-time-title">End time (must be after start time)</div>
               <div className="set-time-direction">Select date and time</div>
               <div>
                 <form>
