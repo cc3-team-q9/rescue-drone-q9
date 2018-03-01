@@ -97,7 +97,12 @@ class CreatePolygon extends Component {
         <div style={{ textAlign: 'left' }}>
           {this.props.label}
         </div>
-        <button onClick={e => this.handleClick(e)} style={{ marginTop: 10, marginBottom: 20 }}>Draw Flight Area</button>
+        <button
+          className="button draw-polygon-button"
+          onClick={e => this.handleClick(e)}
+          style={{ marginTop: 10, marginBottom: 20 }}
+        >Draw Flight Area
+        </button>
         <div ref="map" className="myMap" style={{ height: '700px' }} />
       </div>
     );

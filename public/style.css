@@ -248,3 +248,13 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+
+.draw-polygon-button {
+  width: 200px;
+  font-size: 20px;
+}
+
+.submit-flight-button {
+  font-size: 20px;
+  width: 200px;
+}
