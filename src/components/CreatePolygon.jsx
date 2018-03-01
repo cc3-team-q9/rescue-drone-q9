@@ -42,7 +42,7 @@ class CreatePolygon extends Component {
       position: { lat: 35.657986, lng: 139.727622 },
       map,
       icon: {
-        url: 'http://maps.google.co.jp/mapfiles/ms/icons/helicopter.png',
+        url: 'https://maps.google.co.jp/mapfiles/ms/icons/helicopter.png',
         scaledSize: new google.maps.Size(64, 64),
       },
     });
@@ -50,7 +50,7 @@ class CreatePolygon extends Component {
       position: { lat: this.props.lat, lng: this.props.lng },
       map,
       icon: {
-        url: 'http://www.google.com/mapfiles/gadget/arrowSmall80.png',
+        url: 'https://www.google.com/mapfiles/gadget/arrowSmall80.png',
         scaledSize: new google.maps.Size(62, 54),
       },
     });
