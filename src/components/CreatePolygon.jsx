@@ -35,7 +35,7 @@ class CreatePolygon extends Component {
   componentDidMount() {
     const map = new window.google.maps.Map(ReactDOM.findDOMNode(this.refs.map), {
       center: new window.google.maps.LatLng(35.657986, 139.727622),
-      zoom: 12,
+      zoom: 14,
       mapTypeId: 'roadmap',
     });
     const basementMarker = new google.maps.Marker({
@@ -97,7 +97,7 @@ class CreatePolygon extends Component {
         <div style={{ textAlign: 'left' }}>
           {this.props.label}
         </div>
-        <button onClick={e => this.handleClick(e)} style={{ marginTop: 10, marginBottom: 20 }}>Draw flight area</button>
+        <button onClick={e => this.handleClick(e)} style={{ marginTop: 10, marginBottom: 20 }}>Draw Flight Area</button>
         <div ref="map" className="myMap" style={{ height: '700px' }} />
       </div>
     );

@@ -144,7 +144,7 @@ class CreateFlightPlan extends Component {
                 saveFormContent={this.saveBuffer}
               />
             </div>
-            <button onClick={() => this.handleClick()}>Submit Flight plan</button>
+            <button onClick={() => this.handleClick()}>Submit Flight Plan</button>
           </div>
 
           <div className="create-flight-plan-polygon">
