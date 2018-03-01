@@ -22,7 +22,7 @@ class HelpMessage extends Component {
             <label htmlFor="help-messsage-label">
               <textarea
                 className="text-help"
-                placeHolder="Your Help Message is here:"
+                placeholder="Your Help Message is here:"
                 onChange={this.handleChange}
               />
             </label>

@@ -119,18 +119,18 @@ class CreateFlightPlan extends Component {
             />
             <div className="set-time-div">
               <div className="set-time-title">Start time of flight(cannot be in the past)</div>
-              <div style={{ textAlign: 'left', fontSize: '16px', fontWeight: 'initial' }}>Select date and time</div>
-              <div style={{ display: 'flex' }}>
+              <div className="set-time-direction">Select date and time</div>
+              <div>
                 <form>
                   <input type="datetime-local" onChange={this.handleStartDateChanged} />
                 </form>
               </div>
             </div>
 
-            <div style={{ marginLeft: 20, marginBottom: 20 }}>
-              <div style={{ textAlign: 'left', marginBottom: 10 }}>End time of flight(must be after start time</div>
-              <div style={{ textAlign: 'left', fontSize: '16px', fontWeight: 'initial' }}>Select date and time</div>
-              <div style={{ display: 'flex' }}>
+            <div className="set-time-div">
+              <div className="set-time-title">End time of flight(must be after start time</div>
+              <div className="set-time-direction">Select date and time</div>
+              <div>
                 <form>
                   <input type="datetime-local" onChange={this.handleEndDateChanged} />
                 </form>
@@ -147,12 +147,7 @@ class CreateFlightPlan extends Component {
             <button onClick={() => this.handleClick()}>Submit Flight plan</button>
           </div>
 
-          <div
-            className="create-flight-plan-polygon"
-            style={{
-              textAlign: 'left', marginTop: 20, marginLeft: 20, width: '100%', fontFamily: 'sans-serif', fontSize: '18px', fontWeight: 'bold',
-            }}
-          >
+          <div className="create-flight-plan-polygon">
             <CreatePolygon
               label="Flight Area"
               lat={this.props.userMessage.latitude}
