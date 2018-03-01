@@ -1,5 +1,5 @@
 const defaultState = {
-  username: 'user1',
+  username: 'William',
   userLocation: [],
   helpMsg: '',
   currentView: 'User',

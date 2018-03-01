@@ -11,19 +11,24 @@ class HelpMessage extends Component {
   get currentView() {
     if (this.props.userLocation.length > 0) {
       return (
-        <div>
-          <div style={{ marginTop: '15px', marginBottom: '15px' }}>
-            Longitude: {this.props.userLocation[0].position.lng}<br />
-            Latitude: {this.props.userLocation[0].position.lat}<br />
-          </div>
+        <div className="help-message">
+          <table className="help-message-table">
+            <tbody>
+              <tr><td>Latitude:</td></tr>
+              <tr><td>{this.props.userLocation[0].position.lat}</td></tr>
+              <tr><td>Longitude:</td></tr>
+              <tr><td>{this.props.userLocation[0].position.lng}</td></tr>
+            </tbody>
+          </table>
           <form className="help-message-form" onSubmit={this.handleSubmit}>
-            <div>
-              <label htmlFor="helpMsg">
-                Your Help Message:
-                <textarea className="textHelp" onChange={this.handleChange} />
-              </label>
-            </div>
-            <input className="button" type="submit" value="Send" />
+            <label htmlFor="help-messsage-label">
+              <textarea
+                className="text-help"
+                placeholder="Your Help Message is here:"
+                onChange={this.handleChange}
+              />
+            </label>
+            <input className="button help-message-button" type="submit" value="Send" />
           </form>
         </div>
       );
