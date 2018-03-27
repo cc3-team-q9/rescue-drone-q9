@@ -6,12 +6,19 @@ import Form from './Form';
 class CreateFlightPlan extends Component {
   constructor(props) {
     super(props);
+    const currentTime = new Date();
+    const timeDiffMins = currentTime.getTimezoneOffset();
+    const localTime = new Date(currentTime.getTime() - (timeDiffMins * 60 * 1000));
+    const futureTime = localTime.getTime() + (6 * 60 * 60 * 1000);
+    const startTime = `${localTime.toISOString().slice(0, -8)}:00`;
+    const endTime = `${new Date(futureTime).toISOString().slice(0, -8)}:00`;
+
     this.state = {
       pilotId: '',
-      maxAltitude: '',
-      startTime: '',
-      endTime: '',
-      buffer: '',
+      maxAltitude: '60.96',
+      startTime,
+      endTime,
+      buffer: '2',
       polygon: [],
     };
 
@@ -115,6 +122,7 @@ class CreateFlightPlan extends Component {
             <Form
               label="Maximum altitude"
               example="Example: 60.96"
+              defaultValue={this.state.maxAltitude}
               saveFormContent={this.saveMaxAltitude}
             />
             <div className="set-time-div">
@@ -122,7 +130,11 @@ class CreateFlightPlan extends Component {
               <div className="set-time-direction">Select date and time</div>
               <div>
                 <form>
-                  <input type="datetime-local" onChange={this.handleStartDateChanged} />
+                  <input
+                    type="datetime-local"
+                    value={this.state.startTime}
+                    onChange={this.handleStartDateChanged}
+                  />
                 </form>
               </div>
             </div>
@@ -132,7 +144,11 @@ class CreateFlightPlan extends Component {
               <div className="set-time-direction">Select date and time</div>
               <div>
                 <form>
-                  <input type="datetime-local" onChange={this.handleEndDateChanged} />
+                  <input
+                    type="datetime-local"
+                    value={this.state.endTime}
+                    onChange={this.handleEndDateChanged}
+                  />
                 </form>
               </div>
             </div>
@@ -140,7 +156,8 @@ class CreateFlightPlan extends Component {
             <div style={{ marginBottom: 20 }}>
               <Form
                 label="Buffer (must be bound 1 to 2000)"
-                example="Example: 1"
+                example="Example: 2"
+                defaultValue={this.state.buffer}
                 saveFormContent={this.saveBuffer}
               />
             </div>

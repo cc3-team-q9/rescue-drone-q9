@@ -5,7 +5,7 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      value: props.defaultValue,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -37,6 +37,7 @@ Form.propTypes = {
   saveFormContent: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   example: PropTypes.string.isRequired,
+  defaultValue: PropTypes.string.isRequired,
 };
 
 export default Form;
