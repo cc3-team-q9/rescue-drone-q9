@@ -43,7 +43,7 @@ export default class EmergencyList extends Component {
                 <button
                   className="button create-flight-button"
                   onClick={() => this.handleClick(eachMessage)}
-                >CreateFlightPlan
+                >Create Flight Plan
                 </button>
               </td>
             </tr>
