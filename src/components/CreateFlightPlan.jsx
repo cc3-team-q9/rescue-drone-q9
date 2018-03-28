@@ -115,62 +115,76 @@ class CreateFlightPlan extends Component {
       <div className="rescue-team-app">
         <div className="create-flight-plan-area">
           <div className="create-flight-plan-requirement">
-            <SelectPilot
-              label="Pilot"
-              savePilotId={this.savePilotId}
-            />
-            <Form
-              label="Maximum altitude"
-              example="Example: 60.96"
-              defaultValue={this.state.maxAltitude}
-              saveFormContent={this.saveMaxAltitude}
-            />
-            <div className="set-time-div">
-              <div className="set-time-title">Start time</div>
-              <div className="set-time-direction">Select date and time</div>
-              <div>
-                <form>
-                  <input
-                    type="datetime-local"
-                    value={this.state.startTime}
-                    onChange={this.handleStartDateChanged}
-                  />
-                </form>
+              <SelectPilot
+                label="Pilot"
+                savePilotId={this.savePilotId}
+              />
+            <div style={{display: 'flex'}}>
+              <Form
+                label="Maximum altitude"
+                example="Example: 60.96"
+                defaultValue={this.state.maxAltitude}
+                saveFormContent={this.saveMaxAltitude}
+              />
+              <div style={{ marginBottom: 20 }}>
+                <Form
+                  label="Buffer (must be bound 1 to 2000)"
+                  example="Example: 2"
+                  defaultValue={this.state.buffer}
+                  saveFormContent={this.saveBuffer}
+                />
               </div>
             </div>
 
-            <div className="set-time-div">
-              <div className="set-time-title">End time</div>
-              <div className="set-time-direction">Select date and time</div>
-              <div>
-                <form>
-                  <input
-                    type="datetime-local"
-                    value={this.state.endTime}
-                    onChange={this.handleEndDateChanged}
-                  />
-                </form>
+            <div style={{display: 'flex'}}>
+              <div className="set-time-div">
+                <div className="set-time-title">Start time</div>
+                <div className="set-time-direction">Select date and time</div>
+                <div>
+                  <form>
+                    <input
+                      type="datetime-local"
+                      value={this.state.startTime}
+                      onChange={this.handleStartDateChanged}
+                    />
+                  </form>
+                </div>
+              </div>
+
+              <div className="set-time-div">
+                <div className="set-time-title">End time</div>
+                <div className="set-time-direction">Select date and time</div>
+                <div>
+                  <form>
+                    <input
+                      type="datetime-local"
+                      value={this.state.endTime}
+                      onChange={this.handleEndDateChanged}
+                    />
+                  </form>
+                </div>
               </div>
             </div>
 
             <div style={{ marginBottom: 20 }}>
-              <Form
-                label="Buffer (must be bound 1 to 2000)"
-                example="Example: 2"
-                defaultValue={this.state.buffer}
-                saveFormContent={this.saveBuffer}
-              />
+              <div style={{ textAlign: 'left', margin: '23px' }}>Flight Area</div>
+              <div style={{ textAlign: 'left', margin: '23px 23px 20px 23px', width: '450px', fontSize: '16px', fontWeight: 'initial' }}>
+                Crete a flight area on the right map and then push a "Draw Flight Area" button.
+              </div>
             </div>
-            <button
-              className="button submit-flight-button"
-              onClick={() => this.handleClick()}
-            >Submit Flight Plan
-            </button>
+
+            <div className="submit-flight-button-position">
+              <button
+                className="button submit-flight-button"
+                onClick={() => this.handleClick()}
+              >Submit Flight Plan
+              </button>
+            </div>
           </div>
 
           <div className="create-flight-plan-polygon">
             <CreatePolygon
-              label="Flight Area"
+              label=""
               lat={this.props.userMessage.latitude}
               lng={this.props.userMessage.longitude}
               savePolygon={this.savePolygon}

@@ -200,6 +200,7 @@ body {
   display: flex;
   background-Color: rgb(59, 66, 68);
   color: white;
+  /* position: relative; */
 }
 
 .create-flight-plan-requirement {
@@ -241,7 +242,7 @@ body {
 
 .create-flight-plan-polygon {
   text-align: left;
-  margin: 20px 0px 0px 20px;
+  margin: 15px 0px 0px 10px;
   width: 100%;
   font-family: sans-serif;
   font-size: 18px;
@@ -251,9 +252,20 @@ body {
 .draw-polygon-button {
   width: 200px;
   font-size: 20px;
+  margin-top: 20px;
 }
 
 .submit-flight-button {
-  font-size: 20px;
-  width: 200px;
+  font-size: 30px;
+  width: 300px;
+}
+
+.submit-flight-button-position {
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+.myMap {
+  height: 350px; 
+  width: 750px;
 }
